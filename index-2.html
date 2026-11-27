@@ -1,0 +1,73 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="strict-origin-when-cross-origin"><title>DNL FILMAKER – Filmaking</title><style>*{box-sizing:border-box}body{margin:0;background:#000;color:#fff;font-family:Arial,sans-serif}main{max-width:1600px;margin:auto;padding:24px 12px;text-align:center}.label,.role{color:#ff6b00;font-size:11px;letter-spacing:4px}h1{font-size:clamp(26px,5vw,40px);margin:12px 0 18px;letter-spacing:2px}.line{width:45px;height:3px;background:#ff6b00;margin:auto}.stage{position:relative;max-width:1250px;margin:25px auto 0;aspect-ratio:1.9;perspective:1100px;isolation:isolate;overflow:hidden;touch-action:pan-y}.slide{position:absolute;left:50%;top:50%;width:65%;aspect-ratio:16/9;overflow:hidden;background:#111;box-shadow:0 12px 35px #000;transition:transform .65s cubic-bezier(.22,.7,.2,1),filter .65s,opacity .45s;opacity:0;pointer-events:none;transform:translate(-50%,-50%) scale(.55)}.slide.center{transform:translate(-50%,-50%);z-index:5;opacity:1;pointer-events:auto}.slide.left{transform:translate(-94%,-50%) scale(.78) rotateY(32deg);filter:brightness(.32);z-index:2;opacity:1;pointer-events:auto}.slide.right{transform:translate(-6%,-50%) scale(.78) rotateY(-32deg);filter:brightness(.32);z-index:2;opacity:1;pointer-events:auto}.slide.hidden-left{transform:translate(-140%,-50%) scale(.5) rotateY(40deg)}.slide.hidden-right{transform:translate(40%,-50%) scale(.5) rotateY(-40deg)}.cover,.slide iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.cover{padding:0;background:#111;color:#ff6b00;cursor:pointer}.cover img{width:100%;height:100%;object-fit:cover;display:block}.play{display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:2px solid #ff6b00;background:#000c;border-radius:50%;width:clamp(40px,6vw,65px);aspect-ratio:1;place-items:center;font-size:24px}.center .play{display:grid}.center .cover:hover .play{background:#ff6b00;color:#000}.arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:9;border:1px solid #ff6b00;color:#ff6b00;border-radius:50%;background:#000d;width:clamp(32px,4vw,48px);aspect-ratio:1;font-size:27px;cursor:pointer}.arrow:hover{background:#ff6b00;color:#000}#prev{left:8%}#next{right:8%}h2{font-size:clamp(16px,2.4vw,22px);margin:12px 0 8px}.dots{display:flex;justify-content:center;flex-wrap:wrap;gap:4px;margin:18px 0}.dots button{border:0;background:transparent;padding:8px;cursor:pointer}.dots button:after{content:'';display:block;width:8px;height:8px;background:#444;border-radius:50%}.dots button[aria-current=true]:after{background:#ff6b00}button:focus-visible{outline:2px solid #ff6b00;outline-offset:-3px}footer{color:#aaa;font-size:10px;letter-spacing:3px;margin:12px 0 5px}#status{font-size:12px;color:#aaa} [hidden]{display:none!important}@media(max-width:600px){main{padding:20px 4px}.stage{aspect-ratio:1.55}.slide{width:80%}#prev{left:1%}#next{right:1%}.slide.left{transform:translate(-82%,-50%) scale(.72) rotateY(25deg)}.slide.right{transform:translate(-18%,-50%) scale(.72) rotateY(-25deg)}}@media(prefers-reduced-motion:reduce){.slide{transition:none}}.intro{max-width:900px;margin:30px auto 10px;padding:0 16px}.intro h2{color:#fff;font-size:clamp(20px,3vw,30px);letter-spacing:.3px}.intro p{font-size:clamp(14px,1.6vw,17px);line-height:1.75;color:#ddd;margin:12px auto 0}.project-note{max-width:800px;margin:12px auto 0;color:#ddd;font-size:15px;line-height:1.6;padding:0 12px}.project-note:empty{display:none}.stage{margin-top:16px}</style></head><body><main><header><div class="label">VIDEO PRODUCTION</div><h1>DNL FILMAKER – Filmaking</h1><div class="line"></div></header><section class="intro"><h2>Dare forma alle vostre idee…</h2><p>Il filmmaking è la parte più dinamica e immediata del mio lavoro: qui trasformo idee, momenti ed emozioni in video pensati per comunicare, coinvolgere e restare impressi. A differenza della regia cinematografica, questo ambito punta alla rapidità, all’efficacia e a uno stile visivo adatto al tipo di progetto — che si tratti di uno spot, di un aftermovie, di un matrimonio o di un videoclip musicale.</p></section><div id="stage" class="stage" hidden><button class="arrow" id="prev" aria-label="Video precedente" hidden>‹</button><button class="arrow" id="next" aria-label="Video successivo" hidden>›</button></div><h2 id="current" aria-live="polite"></h2><div class="role" id="role" hidden>FILMAKING</div><p id="project-note" class="project-note" aria-live="polite"></p><div class="dots" id="dots" hidden></div><footer id="count"></footer><p id="status" role="status"></p></main><script>const videos = [
+  [
+    "K3H2zq9E-MU",
+    "Progetto 01",
+    ""
+  ],
+  [
+    "_k0tCavNjLk",
+    "Progetto 02",
+    ""
+  ],
+  [
+    "8Jrgmqym9Rw",
+    "Sara & Alessandro – Short Wedding Film",
+    ""
+  ],
+  [
+    "YMNveI_8eaQ",
+    "La nuova stella di Broadway",
+    ""
+  ],
+  [
+    "nDvFjadP-u4",
+    "Spot Sialab",
+    ""
+  ],
+  [
+    "7Gr-QgWE9l0",
+    "Associazione La Goccia – 40 anni",
+    ""
+  ],
+  [
+    "T31ytUHNigc",
+    "Como Acqua – Progetto Ceresio",
+    ""
+  ],
+  [
+    "Dsigz99Xi2E",
+    "KhorakAndré – Le acciughe fanno il pallone",
+    ""
+  ],
+  [
+    "TypS7nj9igU",
+    "Croce Rossa Italiana – Lecco",
+    ""
+  ],
+  [
+    "9n6YJcKF3VI",
+    "Progetto 10",
+    ""
+  ],
+  [
+    "omjaeWkHxNU",
+    "Progetto 11",
+    ""
+  ],
+  [
+    "ArrmjKs6Q5A",
+    "Progetto 12",
+    ""
+  ]
+];
+
+const stage=document.getElementById('stage'), dots=document.getElementById('dots'), prev=document.getElementById('prev'), next=document.getElementById('next');
+const thumb=(id,q='mqdefault')=>`https://i.ytimg.com/vi/${id}/${q}.jpg`;
+let active=0, slides=[], playing=-1;
+function cover(i){const [id,title]=videos[i], b=document.createElement('button');b.className='cover';b.setAttribute('aria-label','Seleziona o riproduci '+title);const img=new Image();img.alt='';img.decoding='async';img.onload=()=>{if(img.naturalWidth<=120){img.onload=null;img.src=thumb(id)}};img.onerror=()=>{img.onerror=null;img.src=thumb(id)};img.src=thumb(id,'maxresdefault');const p=document.createElement('span');p.className='play';p.textContent='▶';b.append(img,p);b.onclick=()=>i===active?play(i):select(i);slides[i].replaceChildren(b);}
+function play(i){if(i!==active||playing===i)return;const [id,title]=videos[i], f=document.createElement('iframe');f.title=title;f.referrerPolicy='strict-origin-when-cross-origin';f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.src=`https://www.youtube.com/embed/${id}?autoplay=1&playsinline=1&rel=0`;slides[i].replaceChildren(f);playing=i;}
+function select(i){if(!videos.length)return;i=(i+videos.length)%videos.length;if(i!==active&&playing>=0){cover(playing);playing=-1;}active=i;update();}
+function update(){const n=videos.length;slides.forEach((s,i)=>{let d=(i-active+n)%n;if(d>n/2)d-=n;let pos=d===0?'center':d===-1?'left':d===1?'right':d<0?'hidden-left':'hidden-right';s.className='slide '+pos;let visible=Math.abs(d)<=1;s.setAttribute('aria-hidden',String(!visible));let b=s.querySelector('button');if(b)b.tabIndex=visible?0:-1;});Array.from(dots.children).forEach((b,i)=>b.setAttribute('aria-current',String(i===active)));document.getElementById('current').textContent=videos[active][1];document.getElementById('project-note').textContent=videos[active][2]||'';document.getElementById('count').textContent=`EXPLORE MY WORKS · ${String(active+1).padStart(2,'0')} / ${String(n).padStart(2,'0')}`;}
+function render(){const n=videos.length;prev.hidden=next.hidden=n<2;dots.hidden=n<2;stage.hidden=!n;document.getElementById('role').hidden=!n;if(!n){document.getElementById('current').textContent='Nessun progetto pubblicato.';document.getElementById('count').textContent='';return;}videos.forEach(([id,title],i)=>{let s=document.createElement('div');s.className='slide';stage.append(s);slides.push(s);cover(i);let b=document.createElement('button');b.setAttribute('aria-label','Seleziona '+title);b.onclick=()=>select(i);dots.append(b);});update();}
+prev.onclick=()=>select(active-1);next.onclick=()=>select(active+1);stage.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();select(active+(e.key==='ArrowLeft'?-1:1));}});let touch=null;stage.addEventListener('touchstart',e=>{touch=[e.changedTouches[0].clientX,e.changedTouches[0].clientY]}, {passive:true});stage.addEventListener('touchend',e=>{if(!touch)return;let dx=e.changedTouches[0].clientX-touch[0],dy=e.changedTouches[0].clientY-touch[1];touch=null;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))select(active+(dx<0?1:-1));},{passive:true});
+render();</script></body></html>
