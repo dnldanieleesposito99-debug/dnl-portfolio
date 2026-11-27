@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DNL FILMAKER - Showreel</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+.showreel {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #000000;
+    padding: 40px 18px 45px;
+    text-align: center;
+}
+
+.showreel-content {
+    position: relative;
+    max-width: 1180px;
+    margin: auto;
+}
+
+.kicker {
+    color: #FF6B00;
+    font-size: 11px;
+    letter-spacing: .38em;
+    margin: 0 0 12px;
+}
+
+h2 {
+    margin: 0;
+    font-size: clamp(30px, 4.2vw, 52px);
+    font-weight: 800;
+    letter-spacing: .14em;
+}
+
+.orange-line {
+    width: 48px;
+    height: 2px;
+    background: #FF6B00;
+    margin: 16px auto 24px;
+}
+
+.description {
+    max-width: 760px;
+    margin: 0 auto 22px;
+    color: rgba(255,255,255,.75);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.screen-wrap {
+    position: relative;
+    isolation: isolate;
+    max-width: 1040px;
+    margin: auto;
+    padding: 30px 24px;
+}
+
+.wave-background {
+    position: absolute;
+    inset: -35px -45px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.wave-background svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.wave-one {
+    transform-origin: center;
+    animation: waveMotion 9s ease-in-out infinite alternate;
+}
+
+.wave-two {
+    transform-origin: center;
+    animation: waveMotionTwo 12s ease-in-out infinite alternate;
+}
+
+.wave-three {
+    transform-origin: center;
+    animation: waveMotion 15s ease-in-out infinite alternate-reverse;
+}
+
+.screen {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    aspect-ratio: 16 / 9;
+    background: #080808;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 18px 70px rgba(0,0,0,.5),
+        0 0 40px rgba(255,107,0,.15);
+
+    overflow: hidden;
+}
+
+.screen iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #000000;
+}
+
+.youtube-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 12px;
+    letter-spacing: .08em;
+    color: #AAAAAA;
+    text-decoration: none;
+    transition: color .25s ease;
+}
+
+.youtube-link:hover {
+    color: #FF6B00;
+}
+
+/* DISSOLVENZA */
+
+.reveal-ready .reveal {
+    opacity: 0;
+    transform: translateY(28px) scale(.985);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s cubic-bezier(.2,.75,.18,1);
+}
+
+.reveal-ready.revealed .reveal,
+.reveal-ready:focus-within .reveal {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ANIMAZIONE ONDE */
+
+@keyframes waveMotion {
+    0% {
+        transform: translate(-3%, 2%) rotate(-4deg);
+        opacity: .65;
+    }
+    50% {
+        transform: translate(2%, -3%) rotate(2deg);
+    }
+    100% {
+        transform: translate(4%, 4%) rotate(5deg);
+        opacity: 1;
+    }
+}
+
+@keyframes waveMotionTwo {
+    from {
+        transform: translate(4%, -3%) rotate(3deg);
+        opacity: .5;
+    }
+    to {
+        transform: translate(-4%, 4%) rotate(-3deg);
+        opacity: .9;
+    }
+}
+
+/* SMARTPHONE */
+
+@media (max-width: 700px) {
+
+    .showreel {
+        padding: 30px 12px 35px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .screen-wrap {
+        padding: 22px 8px;
+    }
+
+    .wave-background {
+        inset: -20px -20px;
+    }
+}
+
+/* ACCESSIBILITÀ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .reveal-ready .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="showreel" id="showreel">
+
+    <div class="showreel-content">
+
+        <p class="kicker">
+            DNL FILMAKER
+        </p>
+
+        <h2>SHOWREEL</h2>
+
+        <div class="orange-line"></div>
+
+        <p class="description">
+            Una sintesi del mio sguardo, del mio ritmo
+            e del mio modo di raccontare per immagini.
+        </p>
+
+        <div class="screen-wrap reveal">
+
+            <div class="wave-background" aria-hidden="true">
+
+                <svg
+                    viewBox="0 0 1200 700"
+                    preserveAspectRatio="none">
+
+                    <defs>
+
+                        <filter id="blur-orange"
+                            x="-50%" y="-50%"
+                            width="200%" height="200%">
+
+                            <feGaussianBlur stdDeviation="30"/>
+
+                        </filter>
+
+                        <filter id="blur-soft"
+                            x="-50%" y="-50%"
+                            width="200%" height="200%">
+
+                            <feGaussianBlur stdDeviation="50"/>
+
+                        </filter>
+
+                    </defs>
+
+                    <g filter="url(#blur-orange)">
+
+                        <path
+                            class="wave-one"
+                            d="M -80 360
+                               C 180 30, 320 680, 600 350
+                               S 990 40, 1280 370"
+                            fill="none"
+                            stroke="#FF6B00"
+                            stroke-width="65"
+                            opacity=".8"/>
+
+                        <path
+                            class="wave-two"
+                            d="M -80 450
+                               C 160 680, 360 40, 650 430
+                               S 1060 680, 1280 270"
+                            fill="none"
+                            stroke="#FF8533"
+                            stroke-width="35"
+                            opacity=".6"/>
+
+                    </g>
+
+                    <g filter="url(#blur-soft)">
+
+                        <path
+                            class="wave-three"
+                            d="M -60 540
+                               C 280 250, 400 790, 710 490
+                               S 1040 250, 1260 560"
+                            fill="none"
+                            stroke="#FF6B00"
+                            stroke-width="85"
+                            opacity=".65"/>
+
+                    </g>
+
+                </svg>
+
+            </div>
+
+            <div class="screen">
+
+                <iframe
+                    src="https://www.youtube.com/embed/RPrK3lg161I?rel=0&amp;playsinline=1"
+                    title="DNL FILMAKER - Showreel"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+        <a
+            class="youtube-link"
+            href="https://youtu.be/RPrK3lg161I"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Guarda anche su YouTube &#8599;
+
+        </a>
+
+    </div>
+
+</section>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const section = document.getElementById("showreel");
+    const screen = section.querySelector(".screen-wrap");
+
+    if (
+        "IntersectionObserver" in window &&
+        !window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches
+    ) {
+
+        const observer = new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        section.classList.add("revealed");
+                        observer.disconnect();
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+        section.classList.add("reveal-ready");
+        observer.observe(screen);
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
